@@ -1,0 +1,20 @@
+{
+	"name":"wasp/wasp",
+	"description": "A PHP framework designed for REST Apis and small Apps",
+	"authors": [
+		{
+			"name":"Daniel Cox",
+			"email":"danzabian@gmail.com",
+			"homepage":"http://www.valeska.co.uk"
+		}
+	],
+	"require": {
+		"wasp/framework": "dev-master"
+	},
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"Wasp\\Env\\":"environments/"
+		}
+	}
+}
