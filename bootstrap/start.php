@@ -8,15 +8,39 @@
  */
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
-// Debug on all the time while this is in development
-Symfony\Component\Debug\Debug::enable();
+/**
+ *  Set up the profile
+ */
+$profile = new Wasp\Application\Profile(new Symfony\Component\Filesystem\Filesystem);
 
 /**
- *	Load settings from the config files
+ *	Check for profiles in the profiles file
  */
-$connections = require_once dirname( __DIR__ ) . '/config/database.php';
-$appsettings = require_once dirname( __DIR__ ) . '/config/application.php';
-$environments = require_once dirname( __DIR__ ) . '/config/environments.php';
+$profiles = require_once __DIR__ . '/profiles.php';
+
+foreach ($profiles as $host => $folder)
+{
+	$profile->addProfile($host, $folder);
+}
+
+$profile->setDirectory(dirname(__DIR__) . '/config/');
+$profile->addFiles([
+	'database',
+	'application',
+	'environments'
+]);
+
+$profile->settings();
+$settings = $profile->getSettings();
+
+/**
+ *	Debug 
+ *  ---------------------------------------------------
+ */
+if($settings['application']['debug'])
+{
+	Symfony\Component\Debug\Debug::enable();
+}
 
 /**
  *	Build the application
@@ -25,14 +49,18 @@ $environments = require_once dirname( __DIR__ ) . '/config/environments.php';
  *
  */
 $application = new Wasp\Application\Application();
+$application->profile = $profile;
 
 // Register the environments from the configuration
-foreach ($environments as $name => $env)
+foreach ($settings['environments'] as $name => $env)
 {
 	$application->registerEnvironment($name, $env);
 }
 
 // load the environment
-$application->loadEnv($appsettings['environment']);
+$application->loadEnv($settings['application']['environment']);
+
+// Include routes
+require_once dirname(__DIR__) . '/application/Routes.php';
 
 return $application;

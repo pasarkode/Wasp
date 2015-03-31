@@ -10,7 +10,12 @@ return Array(
 	/**
 	 *	Basic Settings
 	 */
-	'name'				=> 'App Name',
+	'name'				=> 'Wasp',
 	'environment'		=> 'develop',
+
+	/**
+	 *	Debug - Set to true for stack traced debug.
+	 */
+	'debug'				=> false,
 	
 );
