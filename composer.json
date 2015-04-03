@@ -1,5 +1,5 @@
 {
-	"name":"wasp/wasp",
+	"name":"wasp/core",
 	"description": "A PHP framework designed for REST Apis and small Apps",
 	"authors": [
 		{
@@ -15,6 +15,7 @@
 	"autoload": {
 		"psr-4": {
 			"Project\\":"application/",
+			"Wasp\\Cache\\": "cache/",
 			"Wasp\\Env\\":"environments/"
 		}
 	}

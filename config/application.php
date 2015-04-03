@@ -10,12 +10,18 @@ return Array(
 	/**
 	 *	Basic Settings
 	 */
-	'name'				=> 'Wasp',
-	'environment'		=> 'develop',
+	'name'										=> 'Wasp',
+	'environment'								=> 'develop',
 
 	/**
 	 *	Debug - Set to true for stack traced debug.
 	 */
-	'debug'				=> false,
-	
+	'debug'										=> false,
+		
+	/**
+	 *	DI Cache Settings
+	 *
+	 */
+	'di_cache_directory'						=> dirname(__DIR__) . '/cache/AppCache.php',
+	'di_cache_namespace'						=> 'Wasp\Cache',
 );

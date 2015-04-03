@@ -12,6 +12,6 @@
 
 return Array(
 
-	'host'			=> 'develop',
+	'host'				=> 'develop',
 
 );
