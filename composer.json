@@ -14,7 +14,7 @@
 	"minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {
-			"Project\\":"application/",
+			"App\\":"application/",
 			"Wasp\\Cache\\": "cache/",
 			"Wasp\\Extensions\\": "environments/",
 			"Wasp\\Env\\":"environments/"

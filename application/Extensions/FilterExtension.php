@@ -1,9 +1,9 @@
-<?php namespace Wasp\Extensions;
+<?php namespace App\Extensions;
 
 use Wasp\DI\Extension;
 
 /**
- * Extension class for filters
+ * Filter extension class
  *
  * @package Wasp
  * @subpackage Extensions
@@ -11,7 +11,7 @@ use Wasp\DI\Extension;
  */
 class FilterExtension extends Extension
 {
-
+	
 	/**
 	 * The extension alias
 	 *
@@ -20,33 +20,32 @@ class FilterExtension extends Extension
 	protected $alias = 'filters';
 
 	/**
-	 * Directory for file loading
+	 * Directory used for the file loader
 	 *
 	 * @var string
 	 */
 	protected $directory;
 
 	/**
-	 * Set up extensions
+	 * Set up extension details
 	 *
 	 * @return void
 	 * @author Dan Cox
 	 */
 	public function setup()
 	{
-		$this->directory = dirname(__DIR__) . '/config/';
+		$this->directory = dirname(__DIR__) . '/';
 	}
 
 	/**
-	 * Extend!
+	 * Run extension
 	 *
 	 * @return void
 	 * @author Dan Cox
 	 */
 	public function extension()
 	{
-		$this->loader->load('filters');
+		$this->loader->load('filters.yml');
 	}
-
 
 } // END class FilterExtension extends Extension

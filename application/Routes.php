@@ -11,4 +11,4 @@ $route = Wasp\DI\DI::getContainer()->get('route');
 /**
  *	Home Page
  */
-$route->add('site.home', '/', Array('GET'), Array('controller' => 'Project\Controllers\HomeController::showHome'));
+$route->add('site.home', '/', Array('GET'), Array('controller' => 'App\Controllers\HomeController::showHome'));

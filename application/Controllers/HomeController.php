@@ -1,4 +1,4 @@
-<?php namespace Project\Controllers;
+<?php namespace App\Controllers;
 
 use Wasp\Controller\BaseController;
 

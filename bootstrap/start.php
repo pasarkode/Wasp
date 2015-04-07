@@ -25,7 +25,9 @@ $profile->setDirectory(dirname(__DIR__) . '/config/');
 $profile->addFiles([
 	'database',
 	'application',
-	'environments'
+	'environments',
+	'extensions',
+	'templates',
 ]);
 
 $profile->settings();
@@ -39,6 +41,14 @@ if($settings['application']['debug'])
 {
 	Symfony\Component\Debug\Debug::enable();
 }
+
+/**
+ *	Registered Extensions
+ *	---------------------------------------------------
+ *
+ */
+$extensions = new Wasp\DI\ExtensionRegister;
+$extensions->loadFromArray($settings['extensions']);
 
 /**
  *	Build the application

@@ -38,12 +38,15 @@ class Develop extends Environment implements EnvironmentInterface
 	public function startTemplating()
 	{
 		$template = $this->DI->get('template');
+		$php = $this->DI->get('phpengine');
 		$twig = $this->DI->get('twigengine');
 
 		$template->setDirectory(dirname(__DIR__) . '/application/Views/');
 		$twig->create();
+		$php->create();
 
 		$template		 
+			->addEngine($php->getEngine())
 			->addEngine($twig)
 			->start();
 	}
