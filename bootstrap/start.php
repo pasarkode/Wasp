@@ -25,6 +25,7 @@ $profile->setDirectory(dirname(__DIR__) . '/config/');
 $profile->addFiles([
 	'database',
 	'application',
+	'commands',
 	'environments',
 	'extensions',
 	'templates',
