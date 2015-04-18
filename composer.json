@@ -15,9 +15,7 @@
 	"autoload": {
 		"psr-4": {
 			"App\\":"application/",
-			"Wasp\\Cache\\": "cache/",
-			"Wasp\\Extensions\\": "environments/",
-			"Wasp\\Env\\":"environments/"
+			"Wasp\\Cache\\": "cache/"
 		}
 	}
 }

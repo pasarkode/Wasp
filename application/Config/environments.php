@@ -11,8 +11,8 @@
  */
 return Array(
 	
-	'develop'				=> 'Wasp\Env\Develop',
+	'develop'				=> 'App\Environment\Develop',
 
-	'production'			=> 'Wasp\Env\Production',
+	'production'			=> 'App\Environment\Production',
 	
 );

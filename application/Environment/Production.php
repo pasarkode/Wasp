@@ -1,30 +1,30 @@
-<?php namespace Wasp\Env;
+<?php namespace App\Environment;
 
 use Wasp\Environment\Environment,
 	Wasp\Environment\EnvironmentInterface;
 
 /**
- * Development environment
+ * Standard production environment
  *
  * @package Wasp
  * @subpackage Environments
  * @author Dan Cox
  **/
-class Develop extends Environment implements EnvironmentInterface
+class Production extends Environment implements EnvironmentInterface
 {
 
 	/**
-	 * Build essential environment tools
+	 * Build essential packages
 	 *
 	 * @return void
 	 * @author Dan Cox
 	 **/
 	public function setup()
 	{
-		$this->createDI();
+		$this->createDIFromCache();
 
 		$this->startTemplating(VIEWS);
 		$this->connect();
 	}
 
-} // END class Develop extends Environment implements EnvironmentInterface
+} // END class Production extends Environment implements EnvironmentInterface
