@@ -8,5 +8,5 @@
 return Array(
 
 	'debug'			=> true,
-	'develop'		=> true,
+
 );

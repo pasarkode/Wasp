@@ -1,10 +1,16 @@
 <?php
 
 /**
+ *	Structure Settings
+ *
+ */
+require_once __DIR__ . '/structure.php';
+
+/**
  *	Composer
  *	---------------------------------------------------
  */
-require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+require_once ROOT . '/vendor/autoload.php';
 
 /**
  *  Set up the profile
@@ -14,14 +20,8 @@ $profile = new Wasp\Application\Profile(new Symfony\Component\Filesystem\Filesys
 /**
  *	Check for profiles in the profiles file
  */
-$profiles = require_once __DIR__ . '/profiles.php';
+$profile->addProfiles( require_once __DIR__ . '/profiles.php' );
 
-foreach ($profiles as $host => $folder)
-{
-	$profile->addProfile($host, $folder);
-}
-
-$profile->setDirectory(dirname(__DIR__) . '/config/');
 $profile->addFiles([
 	'database',
 	'application',
@@ -29,7 +29,7 @@ $profile->addFiles([
 	'environments',
 	'extensions',
 	'templates',
-]);
+], CONFIG);
 
 $profile->settings();
 $settings = $profile->getSettings();
@@ -57,19 +57,13 @@ $extensions->loadFromArray($settings['extensions']);
  *
  *
  */
-$application = new Wasp\Application\Application();
-$application->profile = $profile;
+$application = new Wasp\Application\Application($profile);
+$application->registerEnvironments($settings['environments']);
 
-// Register the environments from the configuration
-foreach ($settings['environments'] as $name => $env)
-{
-	$application->registerEnvironment($name, $env);
-}
-
-// load the environment
 $application->loadEnv($settings['application']['environment']);
 
 // Include routes
-require_once dirname(__DIR__) . '/application/Routes.php';
+$route = $application->getDI()->get('route');
+require_once APPLICATION . 'Routes.php';
 
 return $application;

@@ -14,6 +14,12 @@ return Array(
 	'environment'								=> 'develop',
 
 	/**
+	 *	Database
+	 *
+	 */
+	'default_connection'						=> 'default',
+
+	/**
 	 *	Debug - Set to true for stack traced debug.
 	 */
 	'debug'										=> false,

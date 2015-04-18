@@ -23,32 +23,8 @@ class Develop extends Environment implements EnvironmentInterface
 	{
 		$this->createDI();
 
-		/**
-		 *  Set up templating
-		 */
-		$this->startTemplating();
-	}
-
-	/**
-	 * Loads the twig engine into the template delegator
-	 *
-	 * @return void
-	 * @author Dan Cox
-	 **/
-	public function startTemplating()
-	{
-		$template = $this->DI->get('template');
-		$php = $this->DI->get('phpengine');
-		$twig = $this->DI->get('twigengine');
-
-		$template->setDirectory(dirname(__DIR__) . '/application/Views/');
-		$twig->create();
-		$php->create();
-
-		$template		 
-			->addEngine($php->getEngine())
-			->addEngine($twig)
-			->start();
+		$this->startTemplating(VIEWS);
+		$this->connect();
 	}
 
 } // END class Develop extends Environment implements EnvironmentInterface
