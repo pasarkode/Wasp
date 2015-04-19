@@ -24,6 +24,7 @@ class Develop extends Environment implements EnvironmentInterface
 		$this->createDI();
 
 		$this->startTemplating(VIEWS);
+		$this->setupConnections();
 		$this->connect();
 	}
 

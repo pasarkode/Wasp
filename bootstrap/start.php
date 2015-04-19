@@ -61,9 +61,9 @@ $application = new Wasp\Application\Application($profile);
 $application->registerEnvironments($settings['environments']);
 
 $application->loadEnv($settings['application']['environment']);
+$route = $application->getDI()->get('route');
 
 // Include routes
-$route = $application->getDI()->get('route');
 require_once APPLICATION . 'Routes.php';
 
 return $application;

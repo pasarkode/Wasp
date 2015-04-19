@@ -24,6 +24,7 @@ class Production extends Environment implements EnvironmentInterface
 		$this->createDIFromCache();
 
 		$this->startTemplating(VIEWS);
+		$this->setupConnections();
 		$this->connect();
 	}
 
