@@ -28,6 +28,6 @@ return Array(
 	 *	DI Cache Settings
 	 *
 	 */
-	'di_cache_directory'						=> dirname(__DIR__) . '/cache/AppCache.php',
+	'di_cache_directory'						=> CACHE . 'AppCache.php',
 	'di_cache_namespace'						=> 'Wasp\Cache',
 );
