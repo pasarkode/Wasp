@@ -62,6 +62,10 @@ $application = new Wasp\Application\Application($profile);
 $application->registerEnvironments($settings['environments']);
 
 $application->loadEnv($settings['application']['environment']);
+
+// Module setup
+require_once __DIR__ . '/modules.php';
+
 $route = $application->getDI()->get('route');
 
 // Include routes
