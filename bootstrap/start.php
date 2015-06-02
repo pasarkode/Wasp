@@ -26,6 +26,7 @@ $profile->addFiles([
 	'database',
 	'application',
 	'commands',
+	'modules',
 	'environments',
 	'extensions',
 	'templates',

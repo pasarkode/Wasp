@@ -10,7 +10,7 @@ return Array(
 	
 	'twig'			=> Array(
 			
-		'cache'						=> CACHE,
+		'cache'						=> CACHE . '/templates/',
 		'debug'						=> false,
 		'base_template_class'		=> 'Twig_Template',
 		'autoescape'				=> true,

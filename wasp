@@ -4,10 +4,12 @@
 $framework = require_once __DIR__ . '/bootstrap/start.php';
 
 $app = $framework->getDI()->get('console');
-$app->setName('Wasp');
-$app->setVersion('v0.1.0');
 
 $settings = $framework->profile->getSettings();
+
+// Settings
+$app->setName($settings['application']['cli_name']);
+$app->setVersion($settings['application']['version']);
 
 // Add commands
 $loader = $framework->getDI()->get('commandloader');

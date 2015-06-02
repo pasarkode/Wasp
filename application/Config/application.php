@@ -11,7 +11,9 @@ return Array(
 	 *	Basic Settings
 	 */
 	'name'										=> 'Wasp',
+	'cli_name'									=> 'Wasp Framework CLI',
 	'environment'								=> 'develop',
+	'version'									=> '0.1.0',
 
 	/**
 	 *	Database
