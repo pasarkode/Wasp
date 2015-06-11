@@ -11,4 +11,3 @@ define('CONFIG',		APPLICATION . '/Config/');
 define('ENVIRONMENTS',	APPLICATION . '/Environments/');
 define('VIEWS', 		APPLICATION . '/Views/');
 define('MODELS', 		APPLICATION . '/Models/');
-

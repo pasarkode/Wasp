@@ -32,4 +32,10 @@ return Array(
 	 */
 	'di_cache_directory'						=> CACHE . 'AppCache.php',
 	'di_cache_namespace'						=> 'Wasp\Cache',
+
+	/**
+	 *	Date settings
+	 *
+	 */
+	'timezone'									=> 'GMT', 
 );

@@ -26,7 +26,6 @@ $profile->addFiles([
 	'database',
 	'application',
 	'commands',
-	'modules',
 	'environments',
 	'extensions',
 	'templates',
@@ -43,6 +42,12 @@ if($settings['application']['debug'])
 {
 	Symfony\Component\Debug\Debug::enable();
 }
+
+/**
+ *	Date Settings
+ *	---------------------------------------------------
+ */
+date_default_timezone_set($settings['application']['timezone']);
 
 /**
  *	Registered Extensions
@@ -62,9 +67,6 @@ $application = new Wasp\Application\Application($profile);
 $application->registerEnvironments($settings['environments']);
 
 $application->loadEnv($settings['application']['environment']);
-
-// Module setup
-require_once __DIR__ . '/modules.php';
 
 $route = $application->getDI()->get('route');
 

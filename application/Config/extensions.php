@@ -8,6 +8,5 @@
  *
  */
 return Array(
-	'App\Extensions\FilterExtension',
 	'App\Extensions\FormExtension'
 );
