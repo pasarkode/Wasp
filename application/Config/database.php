@@ -11,11 +11,13 @@
  */
 return Array(
 
-	'default' => Array( 
-		'driver' 		=> 'pdo_mysql', 
-		'user' 			=> 'user',
-		'password'		=> '',
-		'dbname'		=> 'wasp',
-		'models'		=> MODELS ),
-	
+	'connections' => Array (
+
+		'default' => Array( 
+			'driver' 		=> 'pdo_mysql', 
+			'user' 			=> 'user',
+			'password'		=> '',
+			'dbname'		=> 'wasp',
+			'models'		=> MODELS ),
+	),
 );

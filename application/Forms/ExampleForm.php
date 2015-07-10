@@ -20,7 +20,7 @@ class ExampleForm extends Form
 	 */
 	public $name = Array(
 		'name'		=> 'The name',
-		'type'		=> 'String'
+		'type'		=> 'text'
 	);
 
 	/**
@@ -30,7 +30,7 @@ class ExampleForm extends Form
 	 */
 	public $description = Array(
 		'name'		=> 'The description',
-		'type'		=> 'TextArea'
+		'output'	=> 'Wasp\Forms\FieldOutput\TextAreaOutput'
 	);
 
 	/**
