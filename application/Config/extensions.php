@@ -8,5 +8,8 @@
  *
  */
 return Array(
-	'App\Extensions\FormExtension'
+
+	'App\Extensions\FormExtension',
+	'App\Extensions\ShieldWallExtension',
+
 );

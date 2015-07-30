@@ -12,7 +12,7 @@ use Wasp\Forms\Form,
  */
 class ExampleForm extends Form
 {
-	
+
 	/**
 	 * String field
 	 *
@@ -41,7 +41,7 @@ class ExampleForm extends Form
 	public function __construct()
 	{
 		$this->description['rules'] = [new Validation\Required];
-		$this->name['rules'] = [new Validation\Email(), new Validation\Required()]; 
+		$this->name['rules'] = [new Validation\Email(), new Validation\Required()];
 
 		parent::__construct();
 	}

@@ -1,0 +1,9 @@
+services:
+    courier:
+        class: App\Auth\Courier
+        lazy: true
+    shield:
+        class: Wasp\ShieldWall\ShieldWall
+        arguments:
+            - "@courier"
+            - "@session"

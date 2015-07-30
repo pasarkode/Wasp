@@ -25,6 +25,7 @@ $profile->addProfiles( require_once __DIR__ . '/profiles.php' );
 $profile->addFiles([
 	'database',
 	'application',
+	'auth',
 	'commands',
 	'environments',
 	'extensions',
@@ -72,5 +73,15 @@ $route = $application->getDI()->get('route');
 
 // Include routes
 require_once APPLICATION . 'Routes.php';
+
+/**
+ * The authentication map
+ *
+ */
+if ($application->getDI()->getContainer()->has('shield'))
+{
+	$shield = $application->getDI()->get('shield');
+	$shield->map->loadFromYML(AUTHMAP);
+}
 
 return $application;
