@@ -9,7 +9,8 @@
 		}
 	],
 	"require": {
-		"wasp/framework": "dev-master"
+		"wasp/framework": "dev-master",
+		"wasp/shield-wall": "0.1.x"
 	},
 	"minimum-stability": "dev",
 	"autoload": {

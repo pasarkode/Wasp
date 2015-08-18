@@ -1,7 +1,8 @@
 <?php namespace App\Environment;
 
 use Wasp\Environment\Environment,
-	Wasp\Environment\EnvironmentInterface;
+	Wasp\Environment\EnvironmentInterface,
+	Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Development environment
@@ -26,6 +27,10 @@ class Develop extends Environment implements EnvironmentInterface
 		$this->startTemplating(VIEWS);
 		$this->setupConnections();
 		$this->connect();
+
+		// Shield Wall Listener
+		$this->DI->get('kernel.dispatcher')
+				 ->addListener(KernelEvents::REQUEST, [$this->DI->get('shield.listener'), 'onKernelRequest']);
 	}
 
 } // END class Develop extends Environment implements EnvironmentInterface

@@ -41,7 +41,7 @@ class User extends Entity implements UserContractInterface
 	protected $password;
 
 	/**
-	 * The authentication token
+	 * The remember token storage
 	 *
 	 * @ORM\Column(type="string")
 	 * @var String

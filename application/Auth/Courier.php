@@ -21,23 +21,9 @@ class Courier implements CourierInterface
 	 * @return \Wasp\ShieldWall\User\UserContractInterface
 	 * @author Dan Cox
 	 */
-	public function getUserByToken($token)
-	{
-		$user = User::db()->findOneBy(['token' => $token]);
-
-		return $user;
-	}
-
-	/**
-	 * Returns a user contract for given remember token
-	 *
-	 * @param String $token
-	 * @return \Wasp\ShieldWall\User\UserContractInterface
-	 * @author Dan Cox
-	 */
 	public function getUserByRememberToken($token)
 	{
-		$user = User::db()->findOneBy(['remember_token' => $token]);
+		$user = User::db()->findOneBy(['token' => $token]);
 
 		return $user;
 	}
@@ -52,20 +38,6 @@ class Courier implements CourierInterface
 	public function getUserObjectFromContract(UserContractInterface $contract)
 	{
 		return $contract;
-	}
-
-	/**
-	 * Saves the token against the user
-	 *
-	 * @param String $token
-	 * @param \Wasp\ShieldWall\User\UserContractInterface $contract
-	 * @return void
-	 * @author Dan Cox
-	 */
-	public function saveToken($token, UserContractInterface $contract)
-	{
-		$contract->token = $token;
-		$contract->save();
 	}
 
 	/**
