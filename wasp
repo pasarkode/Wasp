@@ -12,7 +12,7 @@ $app->setName($settings['application']['cli_name']);
 $app->setVersion($settings['application']['version']);
 
 // Add commands
-$loader = $framework->getDI()->get('commandloader');
+$loader = $framework->getDI()->get('command.loader');
 $loader->fromArray($settings['commands']);
 
 $app->run();
