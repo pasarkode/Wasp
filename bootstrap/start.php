@@ -10,7 +10,7 @@ require_once __DIR__ . '/structure.php';
  *	Composer
  *	---------------------------------------------------
  */
-require_once ROOT . '/vendor/autoload.php';
+$loader = require_once ROOT . '/vendor/autoload.php';
 
 /**
  *  Set up the profile
@@ -84,4 +84,9 @@ if ($application->getDI()->getContainer()->has('shield'))
 	$shield->map->loadFromYML(AUTHMAP);
 }
 
+/**
+ * Doctrine Annotation Engine
+ *
+ */
+Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 return $application;
