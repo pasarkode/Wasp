@@ -1,4 +1,4 @@
-<?php namespace App\Extensions;
+<?php namespace App\Extensions\ShieldWall;
 
 use Wasp\DI\Extension;
 
@@ -34,7 +34,7 @@ class ShieldWallExtension extends Extension
 	 */
 	public function setup()
 	{
-		$this->directory = APPLICATION;
+		$this->directory = __DIR__;
 	}
 
 	/**

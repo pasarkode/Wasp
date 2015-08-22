@@ -23,7 +23,9 @@ class Courier implements CourierInterface
 	 */
 	public function getUserByRememberToken($token)
 	{
-		$user = User::db()->findOneBy(['token' => $token]);
+		$user = $this->DI->get('entity')
+						->load('App\Models\User')
+						->findOneBy(['token' => $token]);
 
 		return $user;
 	}
@@ -67,7 +69,9 @@ class Courier implements CourierInterface
 	 */
 	public function getUserContractByIdentifier($identifier)
 	{
-		$user = User::db()->findOneBy(['email' => $identifier]);
+		$user = $this->DI->get('entity')
+						->load('App\Models\User')
+						->findOneBy(['email' => $identifier]);
 
 		return $user;
 	}

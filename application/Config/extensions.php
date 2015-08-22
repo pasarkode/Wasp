@@ -9,7 +9,7 @@
  */
 return Array(
 
-	'App\Extensions\FormExtension',
-	'App\Extensions\ShieldWallExtension',
+	'App\Extensions\Forms\FormExtension',
+	'App\Extensions\ShieldWall\ShieldWallExtension',
 
 );

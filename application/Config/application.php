@@ -6,7 +6,7 @@
  *	You can set application settings in this file.
  */
 return Array(
-	
+
 	/**
 	 *	Basic Settings
 	 */
@@ -25,7 +25,7 @@ return Array(
 	 *	Debug - Set to true for stack traced debug.
 	 */
 	'debug'										=> false,
-		
+
 	/**
 	 *	DI Cache Settings
 	 *
@@ -37,5 +37,5 @@ return Array(
 	 *	Date settings
 	 *
 	 */
-	'timezone'									=> 'GMT', 
+	'timezone'									=> 'GMT',
 );

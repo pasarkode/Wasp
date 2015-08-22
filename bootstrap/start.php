@@ -36,7 +36,7 @@ $profile->settings();
 $settings = $profile->getSettings();
 
 /**
- *	Debug 
+ *	Debug
  *  ---------------------------------------------------
  */
 if($settings['application']['debug'])
