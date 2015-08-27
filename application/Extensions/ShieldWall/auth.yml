@@ -2,14 +2,11 @@ services:
     courier:
         class: App\Auth\Courier
         lazy: true
+        calls:
+            - [setDI, ["@service_container"]]
     token.storage:
         class: Wasp\ShieldWall\Token\Storage\APCTokenStorage
         lazy: true
-    shield.listener:
-        class: Wasp\ShieldWall\Bridge\Symfony\ShieldWallListener
-        arguments:
-            - "@shield"
-            - "/login"
     shield:
         class: Wasp\ShieldWall\ShieldWall
         arguments:

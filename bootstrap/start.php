@@ -75,16 +75,6 @@ $route = $application->getDI()->get('route');
 require_once APPLICATION . 'Routes.php';
 
 /**
- * The authentication map
- *
- */
-if ($application->getDI()->getContainer()->has('shield'))
-{
-	$shield = $application->getDI()->get('shield');
-	$shield->map->loadFromYML(AUTHMAP);
-}
-
-/**
  * Doctrine Annotation Engine
  *
  */

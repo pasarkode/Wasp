@@ -1,6 +1,7 @@
 <?php namespace App\Auth;
 
 use Wasp\ShieldWall\Courier\CourierInterface,
+	Wasp\DI\DependencyInjectionAwareTrait,
 	Wasp\ShieldWall\User\UserContractInterface,
 	App\Models\User;
 
@@ -13,6 +14,7 @@ use Wasp\ShieldWall\Courier\CourierInterface,
  */
 class Courier implements CourierInterface
 {
+	use DependencyInjectionAwareTrait;
 
 	/**
 	 * Returns a user contract for the given token

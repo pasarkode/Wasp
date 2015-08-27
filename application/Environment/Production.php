@@ -26,10 +26,6 @@ class Production extends Environment implements EnvironmentInterface
 		$this->startTemplating(VIEWS);
 		$this->setupConnections();
 		$this->connect();
-
-		// Shield Wall Listener
-		$this->DI->get('kernel.dispatcher')
-				 ->addListener(KernelEvents::REQUEST, [$this->DI->get('shield.listener'), 'onKernelRequest']);
 	}
 
 } // END class Production extends Environment implements EnvironmentInterface

@@ -1,0 +1,9 @@
+services:
+    filter.auth:
+        class: App\Filters\Auth
+        calls:
+            - [setDI, ["@service_container"]]
+    filter.basic:
+        class: App\Filters\BasicAuth
+        calls:
+            - [setDI, ["@service_container"]]

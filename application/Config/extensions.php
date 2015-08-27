@@ -10,6 +10,7 @@
 return Array(
 
 	'App\Extensions\Forms\FormExtension',
+	'App\Extensions\Filters\FilterExtension',
 	'App\Extensions\ShieldWall\ShieldWallExtension',
 
 );

@@ -36,14 +36,13 @@ class ExampleForm extends Form
 	/**
 	 * Setup form validation and routing
 	 *
+	 * @return void
 	 * @author Dan Cox
 	 */
-	public function __construct()
+	public function configure()
 	{
 		$this->description['rules'] = [new Validation\Required];
 		$this->name['rules'] = [new Validation\Email(), new Validation\Required()];
-
-		parent::__construct();
 	}
 
 } // END class ExampleForm extends Form
