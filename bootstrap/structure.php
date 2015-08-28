@@ -18,4 +18,3 @@ define('MODELS', 		APPLICATION . '/Models/');
  *
  */
 define('ROUTEFILE', 	APPLICATION . 'Routes.php');
-define('AUTHMAP',		APPLICATION . 'AuthenticationMap.yml');

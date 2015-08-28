@@ -43,7 +43,7 @@ class User extends Entity implements UserContractInterface
 	/**
 	 * The remember token storage
 	 *
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", nullable=true)
 	 * @var String
 	 */
 	protected $token;
