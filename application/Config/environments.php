@@ -10,9 +10,7 @@
  *
  */
 return Array(
-	
+
 	'develop'				=> 'App\Environment\Develop',
 
-	'production'			=> 'App\Environment\Production',
-	
 );

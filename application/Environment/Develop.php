@@ -1,8 +1,10 @@
-<?php namespace App\Environment;
+<?php
 
-use Wasp\Environment\Environment,
-	Wasp\Environment\EnvironmentInterface,
-	Symfony\Component\HttpKernel\KernelEvents;
+namespace App\Environment;
+
+use Wasp\Environment\Environment;
+use	Wasp\Environment\EnvironmentInterface;
+use	Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Development environment

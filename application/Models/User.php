@@ -1,8 +1,10 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use Wasp\Entity\Entity,
-	Doctrine\ORM\Mapping as ORM,
-	Wasp\ShieldWall\User\UserContractInterface;
+use	Doctrine\ORM\Mapping as ORM,
+use	Wasp\ShieldWall\User\UserContractInterface;
 
 /**
  * Entity class for a user

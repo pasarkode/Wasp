@@ -1,9 +1,11 @@
-<?php namespace App\Auth;
+<?php
 
-use Wasp\ShieldWall\Courier\CourierInterface,
-	Wasp\DI\DependencyInjectionAwareTrait,
-	Wasp\ShieldWall\User\UserContractInterface,
-	App\Models\User;
+namespace App\Auth;
+
+use Wasp\ShieldWall\Courier\CourierInterface;
+use	Wasp\DI\DependencyInjectionAwareTrait;
+use	Wasp\ShieldWall\User\UserContractInterface;
+use	App\Models\User;
 
 /**
  * The courier interface class
@@ -25,8 +27,8 @@ class Courier implements CourierInterface
 	 */
 	public function getUserByRememberToken($token)
 	{
-		$user = $this->DI->get('entity')
-						->load('App\Models\User')
+		$user = $this->DI->get('database')
+                        ->setEntity('App\Models\User')
 						->findOneBy(['token' => $token]);
 
 		return $user;
@@ -71,8 +73,8 @@ class Courier implements CourierInterface
 	 */
 	public function getUserContractByIdentifier($identifier)
 	{
-		$user = $this->DI->get('entity')
-						->load('App\Models\User')
+		$user = $this->DI->get('database')
+						->setEntity('App\Models\User')
 						->findOneBy(['email' => $identifier]);
 
 		return $user;

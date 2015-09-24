@@ -1,4 +1,6 @@
-<?php namespace App\Extensions\ShieldWall;
+<?php
+
+namespace App\Extensions\ShieldWall;
 
 use Wasp\DI\Extension;
 

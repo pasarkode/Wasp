@@ -18,7 +18,7 @@ class HomeControllerTest extends TestCase
 	{
 		parent::setUp();
 
-		$this->setupTemplates(VIEWS);	
+		$this->setupTemplates(VIEWS);
 		$route = $this->DI->get('route');
 
 		require ROUTEFILE;
@@ -36,5 +36,5 @@ class HomeControllerTest extends TestCase
 		$this->assertTrue($response->isOK());
 		$this->assertEquals(200, $response->getStatusCode());
 	}
-	
+
 } // END class HomeControllerTest extends TestCase

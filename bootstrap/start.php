@@ -2,13 +2,11 @@
 
 /**
  *	Structure Settings
- *
  */
 require_once __DIR__ . '/structure.php';
 
 /**
  *	Composer
- *	---------------------------------------------------
  */
 $loader = require_once ROOT . '/vendor/autoload.php';
 
@@ -25,7 +23,7 @@ $profile->addProfiles( require_once __DIR__ . '/profiles.php' );
 $profile->addFiles([
 	'database',
 	'application',
-	'auth',
+    'assets',
 	'commands',
 	'environments',
 	'extensions',
@@ -37,7 +35,6 @@ $settings = $profile->getSettings();
 
 /**
  *	Debug
- *  ---------------------------------------------------
  */
 if($settings['application']['debug'])
 {
@@ -46,23 +43,17 @@ if($settings['application']['debug'])
 
 /**
  *	Date Settings
- *	---------------------------------------------------
  */
 date_default_timezone_set($settings['application']['timezone']);
 
 /**
  *	Registered Extensions
- *	---------------------------------------------------
- *
  */
 $extensions = new Wasp\DI\ExtensionRegister;
 $extensions->loadFromArray($settings['extensions']);
 
 /**
  *	Build the application
- *	---------------------------------------------------
- *
- *
  */
 $application = new Wasp\Application\Application($profile);
 $application->registerEnvironments($settings['environments']);
@@ -71,12 +62,22 @@ $application->loadEnv($settings['application']['environment']);
 
 $route = $application->getDI()->get('route');
 
-// Include routes
+/**
+ *  Routes
+ */
 require_once APPLICATION . 'Routes.php';
 
 /**
  * Doctrine Annotation Engine
- *
  */
 Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+/**
+ *  Asset registry
+ */
+$application->getDI()->get('assets')->registerAssets($settings['assets']);
+
+/**
+ *  Return the App for further processing.
+ */
 return $application;

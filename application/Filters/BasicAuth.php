@@ -1,9 +1,11 @@
-<?php namespace App\Filters;
+<?php
 
-use Wasp\Filter\FilterInterface,
-	Symfony\Component\HttpFoundation\Response,
-	Wasp\ShieldWall\Exceptions,
-	Wasp\DI\DependencyInjectionAwareTrait;
+namespace App\Filters;
+
+use Wasp\Filter\FilterInterface;
+use	Symfony\Component\HttpFoundation\Response;
+use	Wasp\ShieldWall\Exceptions;
+use	Wasp\DI\DependencyInjectionAwareTrait;
 
 /**
  * Filter class for basic auth

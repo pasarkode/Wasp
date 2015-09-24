@@ -1,4 +1,6 @@
-<?php namespace App\Extensions\Forms;
+<?php
+
+namespace App\Extensions\Forms;
 
 use Wasp\DI\Extension;
 

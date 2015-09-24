@@ -11,9 +11,9 @@ return Array(
 	'twig'			=> Array(
 
 		'cache'						=> CACHE . '/templates/',
-		'debug'						=> false,
+		'debug'						=> true,
 		'base_template_class'		=> 'Twig_Template',
-		'autoescape'				=> true,
+		'autoescape'				=> false,
 
 	),
 

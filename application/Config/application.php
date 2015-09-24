@@ -5,7 +5,7 @@
  *	-----------------------------------------------------
  *	You can set application settings in this file.
  */
-return Array(
+return array(
 
 	/**
 	 *	Basic Settings

@@ -1,7 +1,9 @@
-<?php namespace App\Forms;
+<?php
 
-use Wasp\Forms\Form,
-	Wasp\Forms\Validation;
+namespace App\Forms;
+
+use Wasp\Forms\Form;
+use	Wasp\Forms\Validation;
 
 /**
  * Example form class

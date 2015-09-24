@@ -1,8 +1,10 @@
-<?php namespace App\Filters;
+<?php
 
-use Wasp\Filter\FilterInterface,
-	Wasp\DI\DependencyInjectionAwareTrait,
-	Wasp\ShieldWall\Exceptions;
+namespace App\Filters;
+
+use Wasp\Filter\FilterInterface;
+use	Wasp\DI\DependencyInjectionAwareTrait;
+use	Wasp\ShieldWall\Exceptions;
 
 /**
  * Filter class for standard authentication

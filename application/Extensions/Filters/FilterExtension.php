@@ -1,4 +1,6 @@
-<?php namespace App\Extensions\Filters;
+<?php
+
+namespace App\Extensions\Filters;
 
 use Wasp\DI\Extension;
 
